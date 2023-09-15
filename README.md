@@ -1,10 +1,16 @@
 # Protein Store
+Projeto desenvolido com NextJS, Framer Motion, ReactJS,  NodeJS, python, flask, docker, utilizando arquitetura de microsserviços. Desenvolvido como MVP para sprint de arquitetura de sistemas da PUC-Rio 2023.2.
 
-Projeto desenvolido com NextJS e Framer Motion.
+## Estrutura de pastas
 
+MVP2
+|____ frontend
+|____ cupom
+|____ frete
 
-## Getting Started
+Obs: Docker compose está na pasta de frontend.
 
+## Iniciando
 Para rodar o projeto sem docker
 
 ```bash
@@ -63,13 +69,10 @@ Remote Endpoints: (usado no projeto)
 ## Serviços
 
 A - Frontend - 
+
 B - API REMOTA (livre acesso) - https://github.com/ticomarques/apicatalog | https://apicatalog.mycodewave.com/products
+
 C - Microsservicos Frete e Cupom - https://github.com/ticomarques/cupom_microservice | https://github.com/ticomarques/frete_microservice
-
-## Info
-
-Este projeto é um MVP para a sprint de arquitetura de software.
-
 
 ## Learn More
 

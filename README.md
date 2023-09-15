@@ -1,22 +1,75 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Protein Store
+
+Projeto desenvolido com NextJS e Framer Motion.
+
 
 ## Getting Started
 
-First, run the development server:
+Para rodar o projeto sem docker
 
 ```bash
+npm install
 npm run dev
-# or
+# ou
+yarn install
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abra [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## Usando docker
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Usando docker run:
+
+Entre no diretorio dos 3 projetos: frontend, cupom e frete.
+
+```bash
+cd frontend
+docker build -t frontend .
+docker run -d  -p 3000:3000 frontend
+
+cd cupom
+docker build -t cupom .
+docker run -d  -p 8000:8000 cupom
+
+cd frete
+docker build -t frete
+docker run -d  -p 8001:8001 frete
+```
+
+
+Usando docker-compose:
+Acesse o diretorio do frontend, e rode o comando abaixo.
+
+```bash
+docker-compose up -d
+```
+
+
+## API Routes
+
+- /api/products - Lista todos os produtos
+- /api/product/id - Lista de produtos usando id
+- /api/categories/ - Lista de todas as categorias
+
+
+Remote Endpoints: (usado no projeto)
+
+- https://apicatalog.mycodewave.com/products - Lista todos os produtos
+- https://apicatalog.mycodewave.com/products/id - Retorna o produto pelo id
+- https://apicatalog.mycodewave.com/categories -  Lista todas as categorias
+
+## Serviços
+
+A - Frontend - 
+B - API REMOTA (livre acesso) - https://github.com/ticomarques/apicatalog | https://apicatalog.mycodewave.com/products
+C - Microsservicos Frete e Cupom - https://github.com/ticomarques/cupom_microservice | https://github.com/ticomarques/frete_microservice
+
+## Info
+
+Este projeto é um MVP para a sprint de arquitetura de software.
+
 
 ## Learn More
 
@@ -27,8 +80,4 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.

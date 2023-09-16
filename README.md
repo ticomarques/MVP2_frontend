@@ -4,8 +4,11 @@ Projeto desenvolido com NextJS, Framer Motion, ReactJS,  NodeJS, python, flask, 
 ## Estrutura de pastas
 
 MVP2
+
 |____ frontend
+
 |____ cupom
+
 |____ frete
 
 Obs: Docker compose está na pasta de frontend.
